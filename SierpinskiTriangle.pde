@@ -1,7 +1,8 @@
-int r = (int)(Math.random()*255);
-int g = (int)(Math.random()*255);
-int b = (int)(Math.random()*255);
+int r = (int)(Math.random()*155+100);
+int g = (int)(Math.random()*155+100);
+int b = (int)(Math.random()*155+100);
 int baseCase = 10;
+int direction = -1;
 
 public void setup()
 {
@@ -13,22 +14,24 @@ public void draw()
 	color c1 = color(r,g,b);
 	fill(c1);
 	sierpinski(10,1290,1280);
+
+	if(baseCase < 10) {
+		direction = -1;
+	}
+	if(baseCase > 1280) {
+		direction = 1;
+	} 
 }
 public void mouseDragged()
 {
-	r = (int)(Math.random()*255);
-	g = (int)(Math.random()*255);
-	b = (int)(Math.random()*255);
+	if(frameCount % 10 == 0) {
+		r = (int)(Math.random()*155+100);
+		g = (int)(Math.random()*155+100);
+		b = (int)(Math.random()*155+100);
+	}
 }
 
-public void mouseClicked() {
-	int direction = -1;
-	if(baseCase == 10) {
-		direction = 1;
-	}
-	if(baseCase == 1280) {
-		direction = 1;
-	}
+public void mousePressed() {
 	if(direction == -1) {
 		baseCase = baseCase * 2;
 	}
