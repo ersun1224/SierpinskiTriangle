@@ -24,7 +24,7 @@ public void draw()
 }
 public void mouseDragged()
 {
-	if(frameCount % 10 == 0) {
+	if(frameCount % 12 == 0) {
 		r = (int)(Math.random()*155+100);
 		g = (int)(Math.random()*155+100);
 		b = (int)(Math.random()*155+100);
