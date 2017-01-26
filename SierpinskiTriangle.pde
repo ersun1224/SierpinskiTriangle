@@ -22,7 +22,7 @@ public void draw()
 		direction = 1;
 	} 
 }
-public void mouseDragged()
+public void mouseMoved()
 {
 	if(frameCount % 12 == 0) {
 		r = (int)(Math.random()*155+100);
